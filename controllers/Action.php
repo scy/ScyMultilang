@@ -20,6 +20,7 @@ class ScyMultilang_Controller_Action extends Zend_Controller_Action {
 		}
 		// Set a locale variable in the view.
 		$this->view->Zend_Locale = $locale;
+		return parent::init();
 	}
 
 }
