@@ -11,6 +11,10 @@
 class ScyMultilang_Controller_Action extends Zend_Controller_Action {
 
 	public function init() {
+		// If no global locale is set, nothing is to be done here.
+		if (!Zend_Registry::isRegistered('Zend_Locale')) {
+			return parent::init();
+		}
 		// Get the active locale.
 		$locale = Zend_Registry::get('Zend_Locale');
 		// Set a global translate (if it exists) to that locale.
